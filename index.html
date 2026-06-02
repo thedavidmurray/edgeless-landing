@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Edgeless Agent Starter Kit -- Launch Your AI Swarm in 1 Hour</title>
+<meta name="description" content="The complete starter kit: pre-configured profiles, working cron jobs, 10 starter skills, and the exact setup we use to run 10+ agents daily.">
+<meta property="og:title" content="Edgeless Agent Starter Kit">
+<meta property="og:description" content="Launch your AI agent swarm on macOS in under an hour.">
+<meta property="og:type" content="product">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 :root{--bg:#0a0a0f;--card:#12121a;--text:#e8e8e8;--muted:#888;--accent:#00d4aa;--accent2:#7c3aed;--danger:#ef4444;--warning:#f59e0b}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -19,27 +24,46 @@ h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-
 .price-box .price{font-size:3.5rem;font-weight:800;color:var(--accent);line-height:1}
 .price-box .price-note{color:var(--muted);font-size:.85rem;margin-top:.5rem}
 .price-box .urgency{background:rgba(239,68,68,.1);color:var(--danger);font-size:.8rem;font-weight:600;padding:.5rem 1rem;border-radius:999px;display:inline-block;margin-top:1rem}
-.cta-button{display:block;width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:1.1rem;font-weight:700;padding:1.1rem 2rem;border:none;border-radius:.75rem;cursor:pointer;transition:transform .15s,box-shadow .15s;text-decoration:none;text-align:center}
+.cta-button{display:block;width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:1.1rem;font-weight:700;padding:1.1rem 2rem;border:none;border-radius:.75rem;cursor:pointer;transition:transform .15s,box-shadow .15s;text-decoration:none;text-align:center;margin-bottom:.75rem}
 .cta-button:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,212,170,.25)}
 .guarantee{text-align:center;color:var(--muted);font-size:.8rem;margin-top:1rem}
 .section{margin-bottom:3rem}
 h2{font-size:1.5rem;font-weight:700;margin-bottom:1rem}
+
+/* Email signup */
+.email-section{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:1rem;padding:2rem;margin-bottom:2rem;text-align:center}
+.email-section h3{font-size:1.15rem;font-weight:700;margin-bottom:.5rem}
+.email-section p{color:var(--muted);font-size:.85rem;margin-bottom:1.25rem}
+.email-form{display:flex;gap:.75rem;max-width:480px;margin:0 auto}
+.email-form input{flex:1;background:var(--bg);border:1px solid rgba(255,255,255,.1);border-radius:.5rem;padding:.8rem 1rem;color:var(--text);font-size:.95rem;outline:none;transition:border-color .15s}
+.email-form input:focus{border-color:var(--accent)}
+.email-form input::placeholder{color:#555}
+.email-form button{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:600;padding:.8rem 1.5rem;border:none;border-radius:.5rem;cursor:pointer;white-space:nowrap;transition:opacity .15s}
+.email-form button:hover{opacity:.9}
+#signup-status{font-size:.85rem;margin-top:.75rem;min-height:1.5em}
+#signup-status.success{color:var(--accent)}
+#signup-status.error{color:var(--danger)}
+
 .feature-grid{display:grid;gap:1rem}
 .feature{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:.75rem;padding:1.25rem}
 .feature h3{font-size:1rem;font-weight:700;margin-bottom:.4rem;display:flex;align-items:center;gap:.5rem}
 .feature p{color:var(--muted);font-size:.9rem}
-.icon{font-size:1.2rem}
 .what-you-get{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:1rem;padding:2rem;margin-bottom:2rem}
 .what-you-get h2{margin-bottom:1.25rem}
 .what-you-get ul{list-style:none}
 .what-you-get li{padding:.5rem 0;padding-left:1.5rem;position:relative;color:var(--muted);font-size:.95rem}
-.what-you-get li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+.what-you-get li::before{content:"\2713";position:absolute;left:0;color:var(--accent);font-weight:700}
 .faq{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:1rem;padding:2rem}
 .faq-item{margin-bottom:1.25rem}
 .faq-item:last-child{margin-bottom:0}
 .faq-q{font-weight:700;margin-bottom:.4rem}
 .faq-a{color:var(--muted);font-size:.9rem}
 .footer{text-align:center;color:var(--muted);font-size:.75rem;padding:2rem 0;border-top:1px solid rgba(255,255,255,.06);margin-top:3rem}
+.footer a{color:var(--accent);text-decoration:none}
+
+.spot-counter{display:flex;align-items:center;justify-content:center;gap:.5rem;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);border-radius:.5rem;padding:.6rem 1rem;margin-bottom:1.5rem;font-size:.85rem;color:var(--muted)}
+.spot-counter .num{color:var(--danger);font-weight:700;font-size:1rem}
+
 @media(min-width:640px){
 .feature-grid{grid-template-columns:1fr 1fr}
 h1{font-size:2.8rem}
@@ -61,103 +85,156 @@ h1{font-size:2.8rem}
   and the exact setup we use to run 10+ agents daily. No theory. Just configs that work.
 </p>
 
-<div class="price-box">
-<div class="old-price">$49</div>
-<div class="price">$29</div>
-<div class="price-note">Early-bird pre-order price -- 48 hours only</div>
-<div class="urgency">⚠ 41 spots left at this price</div>
+<!-- Email signup -->
+<div class="email-section">
+  <h3>Get notified when the kit ships</h3>
+  <p>We'll email you the instant the Agent Starter Kit is ready to download.</p>
+  <form class="email-form" id="email-form">
+    <input type="email" id="email-input" placeholder="you@example.com" required>
+    <button type="submit">Notify Me</button>
+  </form>
+  <div id="signup-status"></div>
 </div>
 
-<a href="mailto:preorder@edgelesslabs.com?subject=Agent%20Kit%20Pre-order%20-%20$29%20Early-bird" class="cta-button">Pre-Order Now -- Email to Reserve Your Spot</a>
+<div class="price-box">
+  <div class="old-price">$49</div>
+  <div class="price">$29</div>
+  <div class="price-note">Early-bird pre-order price -- 48 hours only</div>
+  <div class="urgency">! 41 spots left at this price</div>
+</div>
+
+<div class="spot-counter">
+  <span class="num">9</span>
+  <span>of 50 early-bird spots claimed. Price goes to $49 after.</span>
+</div>
+
+<!-- Gumroad buy button -->
+<a href="https://edgelessai.gumroad.com/l/agent-kit" 
+   class="cta-button"
+   target="_blank"
+   rel="noopener noreferrer">
+  Pre-Order Now -- $29
+</a>
 
 <p class="guarantee">
-  Email preorder@edgelesslabs.com with subject "Agent Kit Pre-order" to reserve your $29 early-bird spot. 30-day money-back guarantee. No questions asked.
+  30-day money-back guarantee. No questions asked.
 </p>
 
 <div class="section">
-<h2>What You Get</h2>
-<div class="what-you-get">
-<ul>
-<li><strong>One-Command Setup Script</strong> -- `setup.sh` installs Hermes, creates your first profile, connects Discord + Telegram</li>
-<li><strong>7 Pre-Configured Agent Profiles</strong> -- Beau, Hive, Kilo, Scribe, and 3 more with AGENTS.md templates</li>
-<li><strong>10 Starter Skills</strong> -- Research, coding, docs, monitoring, and more (YAML frontmatter + markdown bodies)</li>
-<li><strong>5 Cron Job Templates</strong> -- RSS intelligence, email triage, health checks, all pre-built</li>
-<li><strong>Agent Routing Matrix</strong> -- When to use which agent, with real examples from our swarm</li>
-<li><strong>Troubleshooting Guide</strong> -- 20+ fixes for the failures we hit in 3 months of production</li>
-<li><strong>Discord Community Access</strong> -- Join the Edgeless swarm channel for support and updates</li>
-<li><strong>Bonus: Weekly Health Check Script</strong> -- Automated audit of your entire swarm</li>
-<li><strong>Bonus: 50 Production Skills Index</strong> -- Curated list of the best Hermes skills with install commands</li>
-</ul>
-</div>
-</div>
-
-<div class="section">
-<h2>Who This Is For</h2>
-<div class="feature-grid">
-<div class="feature">
-<h3><span class="icon">💻</span> AI Developers</h3>
-<p>You want to run local agents but the setup is overwhelming. This gets you from zero to working swarm in 60 minutes.</p>
-</div>
-<div class="feature">
-<h3><span class="icon">💼</span> Solopreneurs</h3>
-<p>You need a research + coding + documentation team that works while you sleep. Agents don't take breaks.</p>
-</div>
-<div class="feature">
-<h3><span class="icon">🧠</span> AI Researchers</h3>
-<p>You're experimenting with multi-agent systems. Skip the config rabbit hole and start iterating on agent behavior.</p>
-</div>
-<div class="feature">
-<h3><span class="icon">⚡</span> NousResearch Community</h3>
-<p>You've heard about Hermes but haven't set it up yet. This is the fastest path to a working agent swarm on macOS.</p>
-</div>
-</div>
+  <h2>What You Get</h2>
+  <div class="what-you-get">
+    <ul>
+      <li><strong>One-Command Setup Script</strong> -- `setup.sh` installs Hermes, creates your first profile, connects Discord + Telegram</li>
+      <li><strong>7 Pre-Configured Agent Profiles</strong> -- Beau, Hive, Kilo, Scribe, and 3 more with AGENTS.md templates</li>
+      <li><strong>10 Starter Skills</strong> -- Research, coding, docs, monitoring, and more (YAML frontmatter + markdown bodies)</li>
+      <li><strong>5 Cron Job Templates</strong> -- RSS intelligence, email triage, health checks, all pre-built</li>
+      <li><strong>Agent Routing Matrix</strong> -- When to use which agent, with real examples from our swarm</li>
+      <li><strong>Troubleshooting Guide</strong> -- 20+ fixes for the failures we hit in 3 months of production</li>
+      <li><strong>Discord Community Access</strong> -- Join the Edgeless swarm channel for support and updates</li>
+      <li><strong>Bonus: Weekly Health Check Script</strong> -- Automated audit of your entire swarm</li>
+      <li><strong>Bonus: 50 Production Skills Index</strong> -- Curated list of the best Hermes skills with install commands</li>
+    </ul>
+  </div>
 </div>
 
 <div class="section">
-<h2>FAQ</h2>
-<div class="faq">
-<div class="faq-item">
-<div class="faq-q">Does this work on Windows or Linux?</div>
-<div class="faq-a">The setup script is optimized for macOS 14+ (Apple Silicon). Linux instructions are included but not automated. Windows support is not included -- we recommend WSL2 or a Linux VM.</div>
+  <h2>Who This Is For</h2>
+  <div class="feature-grid">
+    <div class="feature">
+      <h3>AI Developers</h3>
+      <p>You want to run local agents but the setup is overwhelming. This gets you from zero to working swarm in 60 minutes.</p>
+    </div>
+    <div class="feature">
+      <h3>Solopreneurs</h3>
+      <p>You need a research + coding + documentation team that works while you sleep. Agents don't take breaks.</p>
+    </div>
+    <div class="feature">
+      <h3>AI Researchers</h3>
+      <p>You're experimenting with multi-agent systems. Skip the config rabbit hole and start iterating on agent behavior.</p>
+    </div>
+    <div class="feature">
+      <h3>NousResearch Community</h3>
+      <p>You've heard about Hermes but haven't set it up yet. This is the fastest path to a working agent swarm on macOS.</p>
+    </div>
+  </div>
 </div>
-<div class="faq-item">
-<div class="faq-q">Do I need API credits to use the agents?</div>
-<div class="faq-a">You need API keys for at least one LLM provider (OpenAI, Fireworks, etc.). The kit includes provider fallback configs so you can switch if one hits rate limits. We recommend starting with Fireworks for cost efficiency.</div>
-</div>
-<div class="faq-item">
-<div class="faq-q">Is this an official NousResearch product?</div>
-<div class="faq-a">No. This is built by Edgeless Labs, an independent team that runs Hermes in production daily. We are active contributors to the Hermes ecosystem.</div>
-</div>
-<div class="faq-item">
-<div class="faq-q">What if I get stuck during setup?</div>
-<div class="faq-a">The kit includes Discord community access. Post in the #agent-setup channel and get help from people who run this infrastructure daily. Response time is typically under 4 hours.</div>
-</div>
-<div class="faq-item">
-<div class="faq-q">When will I receive the product?</div>
-<div class="faq-a">Pre-orders deliver June 2, 2026 via email download link. If we ship early, you get it early. If we're delayed, we refund + you keep the product free.</div>
-</div>
-</div>
+
+<div class="section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">Does this work on Windows or Linux?</div>
+      <div class="faq-a">The setup script is optimized for macOS 14+ (Apple Silicon). Linux instructions are included but not automated. Windows support is not included -- we recommend WSL2 or a Linux VM.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need API credits to use the agents?</div>
+      <div class="faq-a">You need API keys for at least one LLM provider (OpenAI, Fireworks, etc.). The kit includes provider fallback configs so you can switch if one hits rate limits. We recommend starting with Fireworks for cost efficiency.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is this an official NousResearch product?</div>
+      <div class="faq-a">No. This is built by Edgeless Labs, an independent team that runs Hermes in production daily. We are active contributors to the Hermes ecosystem.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if I get stuck during setup?</div>
+      <div class="faq-a">The kit includes Discord community access. Post in the #agent-setup channel and get help from people who run this infrastructure daily. Response time is typically under 4 hours.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">When will I receive the product?</div>
+      <div class="faq-a">Pre-orders deliver June 2, 2026 via email download link. If we ship early, you get it early. If we're delayed, we refund + you keep the product free.</div>
+    </div>
+  </div>
 </div>
 
 <div class="price-box" style="margin-top:3rem">
-<div class="old-price">$49</div>
-<div class="price">$29</div>
-<div class="price-note">Early-bird ends in 48 hours or when 50 spots fill</div>
-<div class="urgency">⚠ 41 spots left</div>
+  <div class="old-price">$49</div>
+  <div class="price">$29</div>
+  <div class="price-note">Early-bird ends in 48 hours or when 50 spots fill</div>
+  <div class="urgency">! 41 spots left</div>
 </div>
 
-<a href="mailto:preorder@edgelesslabs.com?subject=Agent%20Kit%20Pre-order%20-%20$29%20Early-bird" class="cta-button" style="margin-bottom:1rem">Pre-Order Now -- $29</a>
+<a href="https://edgelessai.gumroad.com/l/agent-kit" 
+   class="cta-button"
+   target="_blank"
+   rel="noopener noreferrer">
+  Pre-Order Now -- $29
+</a>
 
 <p class="guarantee">
-  Email preorder@edgelesslabs.com with subject "Agent Kit Pre-order" to reserve your $29 early-bird spot. 30-day money-back guarantee. No questions asked.
+  30-day money-back guarantee. No questions asked.
 </p>
 
 <div class="footer">
-  <p>Edgeless Labs ©2026</p>
+  <p>Edgeless Labs (c) 2026</p>
   <p style="margin-top:.5rem">Not affiliated with NousResearch. Built by people who run Hermes daily.</p>
+  <p style="margin-top:.5rem"><a href="mailto:djm.claude.assistant@gmail.com">Contact</a> &middot; <a href="https://edgelessai.gumroad.com">Gumroad Store</a></p>
 </div>
 
 </div>
+
+<script>
+document.getElementById('email-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  var email = document.getElementById('email-input').value.trim();
+  if (!email) return;
+  var status = document.getElementById('signup-status');
+  status.className = '';
+  status.textContent = 'Submitting...';
+  try {
+    var leads = JSON.parse(localStorage.getItem('agent-kit-leads') || '[]');
+    leads.push({ email: email, timestamp: new Date().toISOString() });
+    localStorage.setItem('agent-kit-leads', JSON.stringify(leads));
+    status.className = 'success';
+    status.textContent = 'Thanks! We will notify you when the kit ships.';
+    document.getElementById('email-input').value = '';
+  } catch(err) {
+    status.className = 'error';
+    status.textContent = 'Something went wrong. Email us directly at djm.claude.assistant@gmail.com';
+  }
+});
+</script>
+
+<!-- Gumroad overlay for inline purchase -->
+<script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script>
 
 </body>
 </html>
