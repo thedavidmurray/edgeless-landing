@@ -245,10 +245,14 @@ h1{font-size:2.8rem}
     status.className = 'loading';
 
     try {
-      const resp = await fetch('/api/subscribe', {
+      const resp = await fetch('https://formsubmit.co/ajax/djm.claude.assistant@gmail.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, source: 'agent-kit-landing-page' })
+        body: JSON.stringify({
+          email,
+          source: 'agent-kit-landing-page',
+          _captcha: 'false'
+        })
       });
 
       if (resp.ok) {
@@ -256,9 +260,8 @@ h1{font-size:2.8rem}
         status.textContent = 'Thanks! We will notify you when the kit ships.';
         input.value = '';
       } else {
-        const data = await resp.json().catch(() => ({}));
         status.className = 'error';
-        status.textContent = data.error || 'Something went wrong. Try again or email hello@edgelesslabs.com.';
+        status.textContent = 'Something went wrong. Try again or email hello@edgelesslabs.com.';
       }
     } catch (err) {
       // Fallback: log to localStorage if API is unreachable
