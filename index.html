@@ -15,25 +15,22 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
 .container{max-width:720px;margin:0 auto;padding:2rem 1.5rem}
-.badge{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:.35rem .8rem;border-radius:999px;margin-bottom:1.5rem}
+.badge{display:inline-block;background:linear-gradient(135deg,var(--danger),var(--accent2));color:#fff;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:.35rem .8rem;border-radius:999px;margin-bottom:1.5rem}
 .eyebrow{color:var(--accent);font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.75rem}
 h1{font-size:2.4rem;font-weight:800;line-height:1.15;margin-bottom:1.25rem;letter-spacing:-.02em}
 h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .subtitle{font-size:1.15rem;color:var(--muted);margin-bottom:2.5rem;max-width:560px}
-.price-box{background:var(--card);border:1px solid var(--border);border-radius:1rem;padding:2rem;margin-bottom:2rem;text-align:center}
-.price-box .old-price{text-decoration:line-through;color:var(--muted);font-size:1.1rem}
-.price-box .price{font-size:3.5rem;font-weight:800;color:var(--accent);line-height:1}
-.price-box .price-note{color:var(--muted);font-size:.85rem;margin-top:.5rem}
-.price-box .urgency{background:rgba(239,68,68,.1);color:var(--danger);font-size:.8rem;font-weight:600;padding:.5rem 1rem;border-radius:999px;display:inline-block;margin-top:1rem}
-.cta-button{display:block;width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:1.1rem;font-weight:700;padding:1.1rem 2rem;border:none;border-radius:.75rem;cursor:pointer;transition:all .15s;text-decoration:none;text-align:center;position:relative;overflow:hidden}
+.price-hero{background:linear-gradient(135deg,rgba(0,212,170,.06),rgba(124,58,237,.06));border:1px solid rgba(0,212,170,.2);border-radius:1rem;padding:2rem;margin-bottom:2rem;text-align:center}
+.price-hero .old-price{text-decoration:line-through;color:var(--muted);font-size:1.2rem;margin-bottom:.25rem}
+.price-hero .price{font-size:3.5rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:.5rem}
+.price-hero .urgency-bar{display:flex;align-items:center;justify-content:center;gap:.75rem;margin-top:1.25rem;flex-wrap:wrap}
+.price-hero .urgency-item{background:rgba(239,68,68,.1);color:var(--danger);font-size:.8rem;font-weight:600;padding:.4rem .8rem;border-radius:999px}
+.price-hero .info-item{background:rgba(0,212,170,.1);color:var(--accent);font-size:.8rem;font-weight:600;padding:.4rem .8rem;border-radius:999px}
+.cta-button{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:1.1rem;font-weight:700;padding:1.1rem 2.5rem;border:none;border-radius:.75rem;cursor:pointer;transition:all .15s;text-decoration:none;text-align:center}
 .cta-button:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,212,170,.25)}
-.cta-button.secondary{background:var(--card);border:1px solid rgba(255,255,255,.12);color:var(--text)}
-.cta-button.secondary:hover{background:#1a1a2a}
-.guarantee{text-align:center;color:var(--muted);font-size:.8rem;margin-top:1rem;display:flex;align-items:center;justify-content:center;gap:.5rem;flex-wrap:wrap}
+.guarantee{text-align:center;color:var(--muted);font-size:.8rem;margin-top:1rem}
 .section{margin-bottom:3rem}
 h2{font-size:1.5rem;font-weight:700;margin-bottom:1rem}
-
-/* Email signup */
 .email-section{background:var(--card);border:1px solid var(--border);border-radius:1rem;padding:2rem;margin-bottom:2rem;text-align:center}
 .email-section h3{font-size:1.15rem;font-weight:700;margin-bottom:.5rem}
 .email-section p{color:var(--muted);font-size:.85rem;margin-bottom:1.25rem}
@@ -47,56 +44,43 @@ h2{font-size:1.5rem;font-weight:700;margin-bottom:1rem}
 #signup-status.success{color:var(--accent)}
 #signup-status.loading{color:var(--warning)}
 #signup-status.error{color:var(--danger)}
-
-.feature-grid{display:grid;gap:1rem}
-.feature{background:var(--card);border:1px solid var(--border);border-radius:.75rem;padding:1.25rem}
-.feature h3{font-size:1rem;font-weight:700;margin-bottom:.4rem;display:flex;align-items:center;gap:.5rem}
-.feature p{color:var(--muted);font-size:.9rem}
-
 .what-you-get{background:var(--card);border:1px solid var(--border);border-radius:1rem;padding:2rem;margin-bottom:2rem}
-.what-you-get h2{margin-bottom:1.25rem}
 .what-you-get ul{list-style:none}
 .what-you-get li{padding:.5rem 0;padding-left:1.5rem;position:relative;color:var(--muted);font-size:.95rem;line-height:1.5}
 .what-you-get li::before{content:"[OK]";position:absolute;left:0;color:var(--accent);font-weight:700;font-size:.8rem}
-
 .faq{background:var(--card);border:1px solid var(--border);border-radius:1rem;padding:2rem}
 .faq-item{margin-bottom:1.25rem}
 .faq-item:last-child{margin-bottom:0}
 .faq-q{font-weight:700;margin-bottom:.4rem}
 .faq-a{color:var(--muted);font-size:.9rem}
-
-.purchase-buttons{margin-bottom:1.5rem}
-.buy-gumroad{display:block;width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:1.1rem;font-weight:700;padding:1rem 2rem;border:none;border-radius:.75rem;cursor:pointer;transition:all .15s;text-decoration:none;text-align:center}
-.buy-gumroad:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,212,170,.25)}
-
-.spot-counter{display:flex;align-items:center;justify-content:center;gap:.5rem;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);border-radius:.5rem;padding:.6rem 1rem;margin-bottom:1.5rem;font-size:.85rem;color:var(--muted)}
-.spot-counter .num{color:var(--danger);font-weight:700;font-size:1rem}
-
 .footer{text-align:center;color:var(--muted);font-size:.75rem;padding:2rem 0;border-top:1px solid var(--border);margin-top:3rem}
 .footer a{color:var(--accent);text-decoration:none}
-
-@media(min-width:640px){
-.feature-grid{grid-template-columns:1fr 1fr}
-h1{font-size:2.8rem}
-}
+@media(min-width:640px){h1{font-size:2.8rem}}
 </style>
 </head>
 <body>
-
 <div class="container">
 
-<div class="badge">Available Now - $29 Launch Price</div>
-
+<div class="badge">Early-Bird Launch — $29</div>
 <p class="eyebrow">Built by people who actually run this</p>
-
 <h1>Launch Your <span>AI Agent Swarm</span> on macOS in Under an Hour</h1>
+<p class="subtitle">The complete starter kit: pre-configured profiles, working cron jobs, 10 starter skills, and the exact setup we use to run 10+ agents daily. No theory. Just configs that work.</p>
 
-<p class="subtitle">
-  The complete starter kit: pre-configured profiles, working cron jobs, 10 starter skills,
-  and the exact setup we use to run 10+ agents daily. No theory. Just configs that work.
-</p>
+<div class="price-hero">
+  <div class="old-price">$49</div>
+  <div class="price">$29</div>
+  <div style="color:var(--muted);font-size:.9rem;margin-bottom:.25rem">Early-bird pricing &middot; Free updates for 12 months</div>
+  <div class="urgency-bar">
+    <span class="urgency-item">50 spots max</span>
+    <span class="info-item">Ships Today</span>
+    <span class="info-item">30-day guarantee</span>
+  </div>
+  <div style="margin-top:1.5rem">
+    <a href="https://gumroad.com/checkout?product=yqxxvw&quantity=1" class="cta-button" target="_blank" rel="noopener noreferrer">Buy Now — $29 →</a>
+  </div>
+  <div style="color:var(--muted);font-size:.75rem;margin-top:.75rem">Full kit. Instant download. 30-day money-back guarantee.</div>
+</div>
 
-<!-- Email capture -->
 <div class="email-section">
   <h3>Stay updated on new skills and add-ons</h3>
   <p>Get notified when we ship new agent skills, starter kit updates, and community tools.</p>
@@ -107,68 +91,20 @@ h1{font-size:2.8rem}
   <div id="signup-status"></div>
 </div>
 
-<div class="price-box">
-  <div class="old-price">$49</div>
-  <div class="price">$29</div>
-  <div class="price-note">Early-bird price - first 50 customers</div>
-  <div class="urgency">41 spots left at this price</div>
-</div>
-
-<div class="spot-counter">
-  <span class="num">9</span>
-  <span>of 50 early-bird spots claimed. Price goes to $49 after.</span>
-</div>
-
-<div class="purchase-buttons">
-  <a href="https://gumroad.com/checkout?product=yqxxvw&quantity=1"
-     class="buy-gumroad"
-     target="_blank"
-     rel="noopener noreferrer">
-    Buy Now - $29
-  </a>
-</div>
-
-<p class="guarantee">
-  [OK] 30-day money-back guarantee. No questions asked.
-  <span style="color:var(--muted);font-size:.8rem"> - Instant download on purchase</span>
-</p>
-
 <div class="section">
   <h2>What You Get</h2>
   <div class="what-you-get">
     <ul>
-      <li><strong>One-Command Setup Script</strong> - <code>setup.sh</code> installs Hermes, creates your first profile, connects Discord + Telegram</li>
-      <li><strong>7 Pre-Configured Agent Profiles</strong> - Beau, Hive, Kilo, Scribe, and 3 more with AGENTS.md templates</li>
-      <li><strong>10 Starter Skills</strong> - Research, coding, docs, monitoring, and more (YAML frontmatter + markdown bodies)</li>
-      <li><strong>5 Cron Job Templates</strong> - RSS intelligence, email triage, health checks, all pre-built</li>
-      <li><strong>Agent Routing Matrix</strong> - When to use which agent, with real examples from our swarm</li>
-      <li><strong>Troubleshooting Guide</strong> - 20+ fixes for the failures we hit in 3 months of production</li>
-      <li><strong>Discord Community Access</strong> - Join the Edgeless swarm channel for support and updates</li>
-      <li><strong>Bonus: Weekly Health Check Script</strong> - Automated audit of your entire swarm</li>
-      <li><strong>Bonus: 50 Production Skills Index</strong> - Curated list of the best Hermes skills with install commands</li>
+      <li><strong>One-Command Setup Script</strong> — <code>setup.sh</code> installs Hermes, creates your first profile, connects Discord + Telegram</li>
+      <li><strong>7 Pre-Configured Agent Profiles</strong> — Coordinator, Code Executor, Knowledge Curator, and 4 more</li>
+      <li><strong>10 Starter Skills</strong> — Research, coding, docs, monitoring (YAML frontmatter + markdown bodies)</li>
+      <li><strong>5 Cron Job Templates</strong> — RSS intelligence, email triage, health checks</li>
+      <li><strong>Agent Routing Matrix</strong> — When to use which agent, with real swarm examples</li>
+      <li><strong>Troubleshooting Guide</strong> — 20+ fixes from 3 months of production</li>
+      <li><strong>Discord Community Access</strong> — Support and updates from the Edgeless swarm</li>
+      <li><strong>Bonus: Weekly Health Check Script</strong> — Automated swarm audit</li>
+      <li><strong>Bonus: 50 Production Skills Index</strong> — Curated Hermes skills with install commands</li>
     </ul>
-  </div>
-</div>
-
-<div class="section">
-  <h2>Who This Is For</h2>
-  <div class="feature-grid">
-    <div class="feature">
-      <h3>[OK] AI Developers</h3>
-      <p>You want to run local agents but the setup is overwhelming. This gets you from zero to working swarm in 60 minutes.</p>
-    </div>
-    <div class="feature">
-      <h3>[OK] Solopreneurs</h3>
-      <p>You need a research + coding + documentation team that works while you sleep. Agents don't take breaks.</p>
-    </div>
-    <div class="feature">
-      <h3>[OK] AI Researchers</h3>
-      <p>You're experimenting with multi-agent systems. Skip the config rabbit hole and start iterating on agent behavior.</p>
-    </div>
-    <div class="feature">
-      <h3>[NEW] NousResearch Community</h3>
-      <p>You've heard about Hermes but haven't set it up yet. This is the fastest path to a working agent swarm on macOS.</p>
-    </div>
   </div>
 </div>
 
@@ -177,110 +113,80 @@ h1{font-size:2.8rem}
   <div class="faq">
     <div class="faq-item">
       <div class="faq-q">Does this work on Windows or Linux?</div>
-      <div class="faq-a">The setup script is optimized for macOS 14+ (Apple Silicon). Linux instructions are included but not automated. Windows support is not included - we recommend WSL2 or a Linux VM.</div>
+      <div class="faq-a">Optimized for macOS 14+ (Apple Silicon). Linux instructions included but not automated.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Do I need API credits to use the agents?</div>
-      <div class="faq-a">You need API keys for at least one LLM provider (OpenAI, Fireworks, etc.). The kit includes provider fallback configs so you can switch if one hits rate limits. We recommend starting with Fireworks for cost efficiency.</div>
+      <div class="faq-q">Do I need API credits?</div>
+      <div class="faq-a">You need API keys for at least one LLM provider (OpenAI, Fireworks, etc.). The kit includes provider fallback configs.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Is this an official NousResearch product?</div>
-      <div class="faq-a">No. This is built by Edgeless Labs, an independent team that runs Hermes in production daily. We are active contributors to the Hermes ecosystem.</div>
+      <div class="faq-a">No. Built by Edgeless Labs, an independent team running Hermes in production daily.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">What if I get stuck during setup?</div>
-      <div class="faq-a">The kit includes Discord community access. Post in the #agent-setup channel and get help from people who run this infrastructure daily. Response time is typically under 4 hours.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">When will I receive the product?</div>
-      <div class="faq-a">Immediate access upon purchase. You'll receive download instructions by email and can access the kit on Gumroad right away.</div>
+      <div class="faq-q">What if I get stuck?</div>
+      <div class="faq-a">Discord community access included. Response time typically under 4 hours.</div>
     </div>
   </div>
 </div>
 
-<div class="price-box" style="margin-top:3rem">
-  <div class="old-price">$49</div>
-  <div class="price">$29</div>
-  <div class="price-note">Early-bird ends when 50 spots fill</div>
-  <div class="urgency">41 spots left</div>
-</div>
-
-<div class="purchase-buttons">
-  <a href="https://gumroad.com/checkout?product=yqxxvw&quantity=1"
-     class="buy-gumroad"
-     target="_blank"
-     rel="noopener noreferrer">
-    Buy Now - $29
-  </a>
-</div>
-
-<p class="guarantee">
-  [OK] 30-day money-back guarantee. No questions asked.
-</p>
+<div class="guarantee">[OK] 30-day money-back guarantee. Instant download on purchase.</div>
 
 <div class="footer">
-  <p>Edgeless Labs - 2026</p>
-  <p style="margin-top:.5rem">Not affiliated with NousResearch. Built by people who run Hermes daily.</p>
-  <p style="margin-top:.5rem"><a href="mailto:hello@edgelesslabs.com">Contact</a> - <a href="https://edgelessai.gumroad.com">Gumroad Store</a></p>
+  <p>Edgeless Labs — 2026</p>
+  <p style="margin-top:.5rem">Not affiliated with NousResearch. <a href="mailto:hello@edgelesslabs.com">Contact</a></p>
 </div>
 
 </div>
 
 <script>
-// Email capture via serverless function
 (function() {
   const form = document.getElementById('email-form');
   const input = document.getElementById('email-input');
   const status = document.getElementById('signup-status');
-
   if (!form) return;
-
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = input.value.trim();
     if (!email) return;
-
-    status.className = '';
-    status.textContent = 'Submitting...';
     status.className = 'loading';
+    status.textContent = 'Submitting...';
 
     try {
-      const resp = await fetch('https://formsubmit.co/ajax/djm.claude.assistant@gmail.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email,
-          source: 'agent-kit-landing-page',
-          _captcha: 'false'
-        })
+      const resp = await fetch('/api/subscribe', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source: 'agent-kit-landing-page' })
       });
-
       if (resp.ok) {
         status.className = 'success';
-        status.textContent = 'Thanks! We will notify you when the kit ships.';
+        status.textContent = "Thanks! We'll notify you about new skills and updates.";
         input.value = '';
-      } else {
-        status.className = 'error';
-        status.textContent = 'Something went wrong. Try again or email hello@edgelesslabs.com.';
+        return;
       }
-    } catch (err) {
-      // Fallback: log to localStorage if API is unreachable
-      try {
-        const leads = JSON.parse(localStorage.getItem('agent-kit-leads') || '[]');
-        leads.push({ email, timestamp: new Date().toISOString() });
-        localStorage.setItem('agent-kit-leads', JSON.stringify(leads));
-      } catch(_) {}
-
-      status.className = 'success';
-      status.textContent = 'Thanks! We will notify you when the kit ships.';
-      input.value = '';
-    }
+    } catch(_) {}
+    try {
+      const resp = await fetch('https://formsubmit.co/ajax/djm.claude.assistant@gmail.com', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source: 'agent-kit-landing-page', _captcha: 'false' })
+      });
+      if (resp.ok) {
+        status.className = 'success';
+        status.textContent = "Thanks! We'll notify you about new skills and updates.";
+        input.value = '';
+        return;
+      }
+    } catch(_) {}
+    try {
+      const leads = JSON.parse(localStorage.getItem('agent-kit-leads') || '[]');
+      leads.push({ email, timestamp: new Date().toISOString() });
+      localStorage.setItem('agent-kit-leads', JSON.stringify(leads));
+    } catch(_) {}
+    status.className = 'success';
+    status.textContent = "Thanks! We'll notify you about new skills and updates.";
+    input.value = '';
   });
 })();
 </script>
-
-<!-- Gumroad overlay script for native checkout -->
 <script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script>
-
 </body>
 </html>
